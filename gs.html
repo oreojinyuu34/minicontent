@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/jquery-2.1.3.min.js"></script>
+
+    <link rel="stylesheet" href="./css/sample.css" />
+    <title>課題</title>
+  </head>
+  <body>
+    <!-- 掛け算 -->
+    <section>
+      <h1 class="title">掛け算</h1>
+      <div id="answer_box" class="box ">
+      </div>
+      <button id="kakezan_start" class="button">start</button>
+      <div id="kakezan_box" class="box" style="display: none;">
+        <p>
+          <span id="num_1"></span>×<span id="num_2"></span>=
+          <input
+            type="number"
+            id="answer"
+            onchange="myanswer()"
+          />
+        </p>
+        <button class="button" >判定</button>
+
+      </div>
+    </section>
+
+
+
+    <script>
+let correct_answer
+      $("#kakezan_start").on("click", function () {
+        $("#answer_box").fadeOut();
+        $("#kakezan_box").fadeIn();
+        let num_1 = Math.random() * 9;
+        let setnum_1 = Math.floor(num_1) + 10;
+        let num_2 = Math.random() * 9;
+        let setnum_2 = Math.floor(num_2) + 1;
+        correct_answer = setnum_1 * setnum_2;
+        console.log(correct_answer);
+
+        $("#num_1").text(setnum_1);
+        $("#num_2").text(setnum_2);
+      });
+      function myanswer() {
+        let getAnswer = $("#answer").val()
+        console.log(getAnswer)
+        if(
+          correct_answer == getAnswer
+        ){
+          console.log("正解")
+          $("#answer_box").html('<h1 class="answer_title">正解</h1>');
+        }else{
+          $("#answer_box").html('<h1 class="answer_title">不正解</h1>');
+        }
+      }
+      </script>
+  </body>
+</html>

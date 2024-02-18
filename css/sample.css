@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 32px;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+main {
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+p {
+    font-size: 200%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    height: 200px;
+}
+
+ul {
+    padding: 0;
+    border-top: 1px solid #000000;
+    display: table;
+    /* 定義 */
+    table-layout: fixed;
+    width: 100%;
+    gap: 10px;
+}
+
+li {
+    text-align: center;
+    list-style-type: none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display: table-cell;
+    /* 定義 */
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+
+}
+
+li:hover {
+    background: #0066CC;
+    color: #fff;
+}
+
+#judgment {
+    background-color: aquamarine;
+    font-size: 72px;
+}
+
+.box {
+    display: flex;
+    position: relative;
+}
+
+.win {
+    font-size: 72px !important;
+    background-color: rgb(254, 39, 39) !important;
+}
+
+#answer {
+    font-size: 72px;
+    height: 100px;
+    width: 200px;
+}
+.answer_title{
+    font-size: 72px;
+    color: red;
+}
+#kakezan_box {
+    display: none;
+}

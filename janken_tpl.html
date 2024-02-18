@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css" />
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <title>じゃんけん</title>
+  </head>
+  <body>
+    <!-- 各ページに行くためのボタン -->
+    <section class="hero is-success">
+      <div class="hero-body">
+        <div class="button">
+          <a href="./index.html">homeへ</a>
+        </div>
+        <div class="button">
+          <a href="janken_tpl.html">じゃんけんへ</a>
+        </div>
+        <div class="button">
+          <a href="./kakezan.html">掛け算へ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- じゃんけん -->
+    <!-- ヘッダー -->
+    <header>
+      <div class="box">
+        <div class="box-img">
+          <h1 class="title">じゃんけん</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- じゃんけん中身 -->
+    <main>
+      <ul>
+        <li id="gu_btn">グー</li>
+        <li id="cho_btn">チョキ</li>
+        <li id="par_btn">パー</li>
+      </ul>
+      <div>
+        コンピュータの出した手は？<br />「<span id="pc_hands" class="is-size-3"
+          >なに？</span
+        >」
+      </div>
+      <div id="judgment" class="none"></div>
+    </main>
+    <footer></footer>
+    <script>
+      //ぐー
+      $("#gu_btn").on("click", function () {
+        let suuji = Math.random() * 3;
+        let seisuu = Math.floor(suuji);
+        console.log(seisuu);
+        $("#judgment").removeClass("win");
+        if (seisuu == 2) {
+          $("#pc_hands").text("ぐー");
+          $("#judgment").text("あいこ");
+        } else if (seisuu == 1) {
+          $("#pc_hands").text("ちょき");
+          $("#judgment").text("勝ち");
+          $("#judgment").addClass("win");
+        } else {
+          $("#pc_hands").text("ぱー");
+          $("#judgment").text("負け");
+        }
+      });
+      //ちょき
+      $("#cho_btn").on("click", function () {
+        let suuji = Math.random() * 3;
+        let seisuu = Math.floor(suuji);
+        console.log(seisuu);
+        $("#judgment").removeClass("win");
+        if (seisuu == 2) {
+          $("#pc_hands").text("ぐー");
+          $("#judgment").text("負け");
+        } else if (seisuu == 1) {
+          $("#pc_hands").text("ちょき");
+          $("#judgment").text("あいこ");
+        } else {
+          $("#pc_hands").text("ぱー");
+          $("#judgment").text("勝ち");
+          $("#judgment").addClass("win");
+        }
+      });
+      //パー
+      $("#par_btn").on("click", function () {
+        let suuji = Math.random() * 3;
+        let seisuu = Math.floor(suuji);
+        console.log(seisuu);
+        $("#judgment").removeClass("win");
+        if (seisuu == 2) {
+          $("#pc_hands").text("ぐー");
+          $("#judgment").text("勝ち");
+          $("#judgment").addClass("win");
+        } else if (seisuu == 1) {
+          $("#pc_hands").text("ちょき");
+          $("#judgment").text("負け");
+        } else {
+          $("#pc_hands").text("ぱー");
+          $("#judgment").text("あいこ");
+        }
+      });
+    </script>
+  </body>
+</html>
